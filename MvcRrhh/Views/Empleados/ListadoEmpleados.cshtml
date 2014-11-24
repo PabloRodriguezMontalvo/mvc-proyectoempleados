@@ -1,0 +1,12 @@
+﻿@model IEnumerable<MvcRrhh.Models.ViewModels.EmpleadoViewModel>
+
+@{
+    Layout = null;
+}
+<h3>Empleados disponibles</h3>
+@foreach (var item in Model)
+{
+    <div>
+        @item.nombre
+    </div>
+}

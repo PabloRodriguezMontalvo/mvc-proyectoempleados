@@ -1,0 +1,22 @@
+﻿@model IEnumerable<MvcRrhh.Models.ViewModels.ProyectoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@Html.ActionLink("Nuevo proyecto","NuevoProyecto")
+<a href="/Proyecto/NuevoProyecto">Nuevo proyecto</a>
+<div  class="row">
+    <div class="col-sm-8">
+              @foreach (var item in Model)
+              {
+                  @Html.Partial("_DetalleProyecto", item)
+              }
+    
+
+          </div>
+    <div class="col-sm-4">
+        @Html.Action("ListadoEmpleados", "Empleados")
+
+    </div>
+</div >
