@@ -13,5 +13,11 @@ namespace MvcRrhh.Controllers
         {
             return View(RepositorioEmpleado.Get());
         }
+        [HttpPost]
+        public ActionResult EmpleadosPorCargo(int id)
+        {
+            var data = RepositorioEmpleado.GetByCargo(id);
+            return Json(data);
+        }
     }
 }

@@ -1,0 +1,44 @@
+﻿@model System.Collections.Generic.List<MvcRrhh.Models.ViewModels.CargoViewModel>
+
+@{
+    ViewBag.Title = "title";
+  
+}
+
+<h2>Cargos</h2>
+<input type="text" id="txtBuscar" placeholder="Buscar"/>
+<button type="button" id="btnBuscar">Buscar</button>
+<div id="resultado">
+    @Html.Partial("_cargos",Model)
+</div>
+<div class="modal fade" id="Dialogo">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title">Empleados</h4>
+            </div>
+            <div class="modal-body" id="ContenidoDialogo">
+              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<script>
+    
+
+    (function() {
+        $("#btnBuscar").click(function() {
+
+            var url = "/cargos/BuscarCargo?nombre=" + $("#txtBuscar").val();
+
+            $("#resultado").load(url);
+
+        });
+
+    })();
+
+</script>

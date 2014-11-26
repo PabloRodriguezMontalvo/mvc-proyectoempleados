@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using MvcRrhh.Models;
 using MvcRrhh.Models.ViewModels;
+using MvcRrhh.Repositorios;
 using Repositorios;
 
 namespace MvcRrhh.Controllers
@@ -34,20 +35,36 @@ namespace MvcRrhh.Controllers
                 return _RepositorioProyecto;
             }
         }
-        private IRepositorio<EmpleadoViewModel, Empleado> _RepositorioEmpleado;
+        private RepositorioEmpleado _RepositorioEmpleado;
 
 
-        protected IRepositorio<EmpleadoViewModel, Empleado> RepositorioEmpleado
+        protected RepositorioEmpleado RepositorioEmpleado
         {
             get
             {
                 if (_RepositorioEmpleado == null)
                     _RepositorioEmpleado =
-                        new Repositorio<EmpleadoViewModel, Empleado>(_db);
+                        new RepositorioEmpleado(_db);
 
                 return _RepositorioEmpleado;
             }
         }
+
+        private RepositorioCargo _RepositorioCargo;
+
+
+        protected RepositorioCargo RepositorioCargo
+        {
+            get
+            {
+                if (_RepositorioCargo == null)
+                    _RepositorioCargo =
+                        new RepositorioCargo(_db);
+
+                return _RepositorioCargo;
+            }
+        }
+
         #endregion
 
     }
