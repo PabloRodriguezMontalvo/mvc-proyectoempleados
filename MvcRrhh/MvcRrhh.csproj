@@ -184,6 +184,7 @@
     <Content Include="Views\Proyecto\Index.cshtml" />
     <Content Include="Views\Shared\_cargos.cshtml" />
     <Content Include="Views\Cargos\Index.cshtml" />
+    <Content Include="Views\Empleados\Alta.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

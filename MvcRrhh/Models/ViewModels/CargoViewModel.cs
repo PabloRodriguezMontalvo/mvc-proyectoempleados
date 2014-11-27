@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using Repositorios;
@@ -9,6 +10,7 @@ namespace MvcRrhh.Models.ViewModels
     public class CargoViewModel:IViewModel<Cargo>
     {
         public int idCargo { get; set; }
+        [DisplayName("Nombre")]
         public string nombre { get; set; }
         public decimal salarioBase { get; set; }
         public Cargo ToBaseDatos()
